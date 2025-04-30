@@ -1,0 +1,4 @@
+ID;carrierID;carrierName;phone;email;password;numDrivers;maxDrivers;numUsers;maxUsers;adminUser_ID;createdAt;createdBy;modifiedAt;modifiedBy
+fe6388bd-c940-41e6-ab54-dbd7d1576953;2000000001;Speedy Delivery;203-555-0123;contact@speedydelivery.com;password123;5;10;3;5;21b00a19-2d42-4ad7-ab14-549a180adf8b;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+21b00a19-2d42-4ad7-ab14-549a180adf8b;2000000002;Quick Transport;203-555-0456;info@quicktransport.com;securepass456;8;15;4;8;b43dc648-8c96-4aba-9b83-63c2d5f6975d;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+b43dc648-8c96-4aba-9b83-63c2d5f6975d;2000000003;Reliable Carriers;203-555-0789;support@reliablecarriers.com;mysecret789;10;20;2;4;f8b59846-c015-4d22-a975-681274631761;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin

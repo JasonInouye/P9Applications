@@ -1,0 +1,59 @@
+{
+  "name": "Planet9Applications",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/hana": "^1",
+    "@sap-cloud-sdk/http-client": "^4.0.2",
+    "@sap-cloud-sdk/util": "^4.0.2",
+    "@sap/cds": "^8",
+    "@sap/low-code-event-handler": "^1.2.5",
+    "@sap/xsenv": ">=3.3.2 <3.3.3",
+    "@sap/xssec": "^4.6.0",
+    "express": "^4",
+    "hdb": "^0.19.12",
+    "passport": "^0.7.0"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.9.0",
+    "@cap-js/sqlite": "^1",
+    "@sap/dev-cap-tools": "^1.31.0"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "start-local": "npm run generate-entry-point && npm run cds-watch",
+    "generate-entry-point": "dev-cap-tools gen-entrypoint",
+    "cds-watch": "cds watch --open",
+    "watch-planet9applications.carriers": "cds watch --open planet9applications.carriers/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-planet9applications.location": "cds watch --open planet9applications.location/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-planet9applications.archivedorders": "cds watch --open planet9applications.archivedorders/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "sql": {
+      "native_hana_associations": false
+    },
+    "requires": {
+      "[production]": {
+        "db": "hana",
+        "auth": "xsuaa"
+      },
+      "auth": {
+        "[development]": {
+          "kind": "dummy"
+        },
+        "[production]": {
+          "kind": "xsuaa"
+        }
+      }
+    }
+  },
+  "lcap": true,
+  "sapux": [
+    "app/planet9applications.carriers",
+    "app/planet9applications.location",
+    "app/planet9applications.archivedorders"
+  ]
+}

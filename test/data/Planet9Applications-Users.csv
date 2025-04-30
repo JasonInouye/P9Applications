@@ -1,0 +1,6 @@
+ID;userID;userName;email;phone;password;isDriver;isUser;carrierID;createdAt;createdBy;modifiedAt;modifiedBy
+fe6388bd-c940-41e6-ab54-dbd7d1576953;usr00001;John Doe;johndoe@example.com;203-555-1234;userpass1;true;true;2000000001;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+21b00a19-2d42-4ad7-ab14-549a180adf8b;usr00002;Jane Smith;janesmith@example.com;203-555-5678;password2;false;true;2000000001;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+b43dc648-8c96-4aba-9b83-63c2d5f6975d;usr00003;Mike Johnson;mikej@example.com;203-555-8765;mypassword3;true;false;2000000002;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+f8b59846-c015-4d22-a975-681274631761;usr00004;Emily Davis;emilyd@example.com;203-555-4321;securepass4;false;true;2000000002;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+f1588132-0a3b-4a6e-85f3-10c145be704b;usr00005;Chris Lee;chrislee@example.com;203-555-9876;pass12345;true;false;2000000003;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
