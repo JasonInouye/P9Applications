@@ -6,12 +6,15 @@ annotate Planet9ApplicationsService.Carriers with @UI.HeaderInfo: {
   Title: { Value: carrierID }
 };
 
+annotate Planet9ApplicationsService.Carriers 
+  with @Capabilities.SearchRestrictions: { Searchable: true };
+
 annotate Planet9ApplicationsService.Carriers with {
   ID @UI.Hidden @Common.Text: { $value: carrierID, ![@UI.TextArrangement]: #TextOnly };
-  carrierID @title: 'Carrier ID';
-  carrierName @title: 'Carrier Name';
-  phone @title: 'Phone';
-  email @title: 'Email';
+  carrierID @title: 'Carrier ID' @core.searchable: true;
+  carrierName @title: 'Carrier Name' @core.searchable: true;
+  phone @title: 'Phone' @core.searchable: true;
+  email @title: 'Email' @core.searchable: true;
   password @title: 'Password';
   numDrivers @title: 'Current Number of Drivers';
   maxDrivers @title: 'Maximum Allowed Drivers';
@@ -26,6 +29,19 @@ annotate Planet9ApplicationsService.Carriers with {
   users @Common.Label: 'Users';
   users @UI.Hidden: false;
 };
+
+annotate Planet9ApplicationsService.Carriers with @UI.SelectionPresentationVariant: {
+  SelectionVariant: {
+    $Type: 'UI.SelectionVariantType',
+    Text: 'Default Filter'
+  },
+  PresentationVariant: {
+    $Type: 'UI.PresentationVariantType',
+    MaxItems: 20
+  }
+};
+
+
 
 annotate Planet9ApplicationsService.Carriers with @UI.LineItem: [
   { $Type: 'UI.DataField', Value: carrierID },

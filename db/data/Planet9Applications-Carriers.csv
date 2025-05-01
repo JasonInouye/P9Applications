@@ -1,0 +1,31 @@
+ID;carrierID;carrierName;phone;email;password;numDrivers;maxDrivers;numUsers;maxUsers;adminUser_ID
+b2b9437a-28df-4ec4-8e4a-2bbdc241330b;CARRIER001;Rodriguez, Figueroa and Sanchez;(181)960-0133;hoffmanjennifer@gardner.com;pass2824;3;3;4;7;CARRIER001_ADMIN
+913e4de2-e0c5-4cb8-bda9-c2a90ed42f1a;CARRIER002;Mckay Ltd;828-148-9325x288;georgetracy@hickman.com;pass1488;2;4;6;6;CARRIER002_ADMIN
+afffcfd2-341e-440b-97c7-00aab7b56ea7;CARRIER003;Ibarra-Suarez;(427)849-8084x124;prestonjulia@nelson.com;pass3547;3;6;3;4;CARRIER003_ADMIN
+81d2c7de-4ce1-4b90-a669-7833b841d0a0;CARRIER004;Estes, Baker and Rodriguez;(556)981-6934x06088;michaeljones@mccall.com;pass1711;9;10;9;9;CARRIER004_ADMIN
+680bac63-b856-4035-bdc9-829015eabb27;CARRIER005;Rivas Inc;737-996-5075x273;lauren54@haynes.com;pass6820;6;6;8;8;CARRIER005_ADMIN
+4ab7706e-b773-40ca-aec2-59dc7f95897c;CARRIER006;Harris PLC;(477)109-3248;tranchristopher@murray.com;pass2084;5;6;7;10;CARRIER006_ADMIN
+f23e323d-0b9b-4934-a3c8-6d301dde7969;CARRIER007;Baker Inc;549.651.3709x859;deborahreid@blankenship-turner.biz;pass3266;2;10;2;3;CARRIER007_ADMIN
+bde13c1b-2073-4f6d-8d6a-05b343ef2016;CARRIER008;Robinson, Kane and Murphy;(904)228-4210;alexistyler@chapman.com;pass2040;7;9;9;10;CARRIER008_ADMIN
+925817b7-cf50-4889-a8b7-7f7b7321bf6b;CARRIER009;Jones-Ramos;490-581-4770x0541;gilbertwilliam@carpenter-best.com;pass3504;3;8;3;3;CARRIER009_ADMIN
+9acb394a-cd1f-4318-b31f-63fbd11fc8c0;CARRIER010;Griffith Inc;(537)947-3834x73597;xhammond@shaw-barnes.com;pass4923;1;3;1;4;CARRIER010_ADMIN
+871c0884-9bdf-40f2-ba2c-0f19f0b2a5d1;CARRIER011;Vang-Brooks;5152204727;fgilbert@scott.net;pass2133;2;5;10;10;CARRIER011_ADMIN
+18c8a616-2410-4e9a-bf77-9cae7318b96d;CARRIER012;Chavez-Barker;(767)735-9255;theresa25@hoffman.com;pass1117;1;4;1;6;CARRIER012_ADMIN
+ae2e9af9-9f8c-429f-bd35-0c5fd3479a3b;CARRIER013;Harper-Cameron;+1-748-016-2456x50609;michaelroberts@gordon-duran.com;pass6413;2;4;7;7;CARRIER013_ADMIN
+2ced3c0d-3173-44b5-81dd-484aaca58d95;CARRIER014;Smith PLC;+1-154-788-7287x431;francisco74@lopez.org;pass7735;1;10;1;4;CARRIER014_ADMIN
+e9ad0e9b-8c9a-41e9-b3b2-63376a74dbb7;CARRIER015;Green LLC;001-301-742-6841x459;jeffreyanderson@gibson.com;pass6559;2;4;3;6;CARRIER015_ADMIN
+ac09bdb7-9908-4e47-b249-f62c08987462;CARRIER016;Nunez-Stephens;+1-633-752-4310;bmendez@harris.org;pass5563;4;10;4;10;CARRIER016_ADMIN
+7d024c6d-8bea-45c1-b866-77aa23d4526b;CARRIER017;Donovan, Riley and Butler;(353)693-7854;plevy@henry.com;pass3724;8;9;8;9;CARRIER017_ADMIN
+cb881c32-cbb0-4a8b-9908-a121d1a7ba20;CARRIER018;Thompson-Sanders;479-356-4651x93982;bentonsteven@clark.com;pass1958;3;3;3;8;CARRIER018_ADMIN
+9d361cb6-bcc5-4be0-8779-250a6544e313;CARRIER019;Williams-Page;5123828258;omullen@soto-lopez.biz;pass4044;1;4;4;6;CARRIER019_ADMIN
+d0afb235-ade6-4f51-a670-93a0fc48f615;CARRIER020;Gonzales Inc;001-339-596-2923x30958;candice25@carter.net;pass5272;6;6;6;8;CARRIER020_ADMIN
+a3fa4069-1519-4d38-a6fb-a71db3a9dcaa;CARRIER021;Anderson-Valencia;001-658-271-0910;jason06@mitchell.biz;pass9808;5;6;5;7;CARRIER021_ADMIN
+131eb723-3bcd-4203-859e-e67473e7f042;CARRIER022;Ramirez, Williams and Hall;657.191.8261x99062;kellyrosales@haynes-moss.com;pass9666;3;3;3;7;CARRIER022_ADMIN
+e2789642-a484-4035-b30f-aaa36b52f93c;CARRIER023;Vega-Thompson;244.720.9993;victor87@miller.com;pass5462;5;7;6;6;CARRIER023_ADMIN
+07ef2ba8-b45a-4ab3-bb94-a34de4aa786d;CARRIER024;Payne-Garcia;932.710.4054x1152;emartin@mcmahon.org;pass3143;2;7;10;10;CARRIER024_ADMIN
+d0e656e5-9271-4f6e-bea8-2e3ab54401cb;CARRIER025;Campbell, Cohen and Olson;454-443-2830x96520;qbright@sullivan-doyle.org;pass6794;3;9;4;6;CARRIER025_ADMIN
+0c7031eb-9f85-42dd-88e4-4a48c5709e30;CARRIER026;Bryant-Meyer;562.575.3260x33230;daviddawson@brooks.com;pass5371;1;5;1;9;CARRIER026_ADMIN
+92fbacf6-d5d1-4669-9c45-3357e8294a67;CARRIER027;Jimenez PLC;483.564.2087;haleycastillo@smith.com;pass4644;4;6;5;6;CARRIER027_ADMIN
+b8b818cf-be15-4187-b783-e1d5d26404b9;CARRIER028;Bryan-Velasquez;589.975.7113x055;amy51@prince.com;pass6753;9;9;9;10;CARRIER028_ADMIN
+22e9e527-3849-4ecc-8891-57fd2804d0ac;CARRIER029;Hayes-Sullivan;061-809-1901x58144;campbellsara@foster-guerrero.info;pass9518;3;6;3;9;CARRIER029_ADMIN
+260ccfb4-c673-4380-a766-861778dbcde3;CARRIER030;Griffin-Hampton;812.914.2834x1108;hessbeth@lewis.net;pass7691;7;8;9;9;CARRIER030_ADMIN

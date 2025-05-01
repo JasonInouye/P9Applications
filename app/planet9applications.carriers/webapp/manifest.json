@@ -121,6 +121,7 @@
             "settings": {
               "contextPath": "/Carriers",
               "variantManagement": "Page",
+              "selectionPresentationVariant": "default",
               "navigation": {
                 "Carriers": {
                   "detail": {

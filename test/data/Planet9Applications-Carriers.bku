@@ -1,0 +1,31 @@
+ID;carrierID;carrierName;phone;email;password;numDrivers;maxDrivers;numUsers;maxUsers;adminUser_ID
+6bb73dac-9681-4aed-b5ec-c661d3b4a1d1;CARRIER001;Ross, White and Mitchell;6306244795;walkerandrew@walker-carr.org;pass1027;3;6;3;9;CARRIER001_ADMIN
+80dc4873-9eb3-48ad-9c15-b25e2379750a;CARRIER002;Perez-Powell;001-747-226-4085x72169;amccann@fields.com;pass7691;7;8;9;9;CARRIER002_ADMIN
+575519cd-3fbf-47eb-883d-9b03de04d086;CARRIER003;Hudson-Perkins;739-970-4694;vwelch@webb.com;pass4501;3;10;4;4;CARRIER003_ADMIN
+c5a8646c-23f5-4ea6-8598-1489b087ab0e;CARRIER004;Medina-Kim;172-156-2294x9381;ksanchez@farmer.com;pass3414;1;3;4;6;CARRIER004_ADMIN
+97187943-6168-44a8-855f-30a134a450e3;CARRIER005;Fernandez Inc;533-342-6433x50271;vjohnson@clark.com;pass4997;1;5;4;4;CARRIER005_ADMIN
+39bdc3ed-2481-4414-b139-dc4bce31ce5c;CARRIER006;Alexander, Vincent and Pacheco;4774258591;kvasquez@martinez.com;pass3184;9;10;10;10;CARRIER006_ADMIN
+3599fe91-291c-4094-8b2c-0efbc4c3b30d;CARRIER007;Boyer, Johnson and Ross;+1-603-920-5146x0745;michael34@bowers-nguyen.com;pass6238;2;4;3;5;CARRIER007_ADMIN
+e669dd22-5d50-42eb-9ec7-4b9e6e6aa3ec;CARRIER008;Cain, Thomas and Phillips;9776889362;yburton@green.com;pass7678;8;8;8;9;CARRIER008_ADMIN
+d2e106a4-0d6c-4599-89aa-e145f6d4f767;CARRIER009;Garcia-Hoffman;+1-647-408-0314x998;daniellestevenson@johnson.com;pass5471;8;9;8;8;CARRIER009_ADMIN
+31d16ea8-9181-48a2-b0e3-1645b66c4a03;CARRIER010;Williams Group;001-836-253-6667x776;ucox@ross.com;pass5262;6;9;7;7;CARRIER010_ADMIN
+a049d164-952f-4d11-a7ff-97ca12049b0a;CARRIER011;Gentry, Hensley and Huang;2131251293;shieldsalec@doyle.org;pass2124;1;3;2;6;CARRIER011_ADMIN
+acac1b18-be88-44ab-ba27-a8f803125cdd;CARRIER012;Reid-Vargas;+1-684-364-5380x442;browntroy@brown.info;pass3068;2;10;5;6;CARRIER012_ADMIN
+a210dd25-392c-4f42-bf20-3c2279477aa8;CARRIER013;Zamora-Edwards;629-518-7794;colekimberly@joseph-cox.com;pass7149;4;9;4;4;CARRIER013_ADMIN
+6553b96b-ab96-4b35-a263-7d77c186cbce;CARRIER014;Moore, Carson and Olsen;214.330.8003x700;katherinedodson@mason.biz;pass7071;3;4;3;3;CARRIER014_ADMIN
+05bba5e4-a754-4837-aae0-6e0147acaec9;CARRIER015;Hoffman-Mitchell;+1-319-100-9004x04769;coltonrichardson@lee.com;pass3506;3;9;7;7;CARRIER015_ADMIN
+d4a42bf0-b96a-4305-bed1-d8f8153d2c6b;CARRIER016;Shelton Inc;550.476.8169x9570;fjohnson@wells.com;pass6511;2;3;3;8;CARRIER016_ADMIN
+161cd674-2978-468d-862c-06921efa91a0;CARRIER017;Kim LLC;001-608-581-6704x686;brownjose@howard.com;pass5581;5;7;5;5;CARRIER017_ADMIN
+c971d849-e3fb-4c48-9cf1-16dcc4b03ad1;CARRIER018;Black, Welch and King;449-835-5393x543;zachary64@harper-santiago.com;pass2524;2;7;5;9;CARRIER018_ADMIN
+4a69ed38-b705-4692-bfaf-1b34462e27af;CARRIER019;Harris-Nunez;(855)078-9679x35219;zjackson@robinson.biz;pass5438;3;7;3;6;CARRIER019_ADMIN
+a3dff5f0-297e-46fe-bf8b-015eb6a35409;CARRIER020;Sanchez Inc;248-088-0622x07223;audrey47@gibson.com;pass4138;6;6;8;9;CARRIER020_ADMIN
+15042b41-19c4-47d6-9537-846cda6b391d;CARRIER021;Sullivan-Reynolds;(705)514-3776x93663;john25@harper.biz;pass3068;2;10;3;3;CARRIER021_ADMIN
+becac08c-53b0-4133-90d7-09562205f294;CARRIER022;Flores, Allen and Olson;(189)437-0526x35100;perry77@levy.info;pass1841;7;7;7;10;CARRIER022_ADMIN
+5f5e9c52-ef15-427d-aa21-ee30fcd77150;CARRIER023;Sparks-Reynolds;632.397.9137x87655;racheljohnson@smith.com;pass9561;8;9;9;9;CARRIER023_ADMIN
+194d397d-b09d-4d19-813b-4e2085a3a473;CARRIER024;Turner-Walker;476.427.3720;deannacruz@hicks.com;pass5771;1;3;6;7;CARRIER024_ADMIN
+71f07cbe-cb72-4b16-9631-51519c672338;CARRIER025;Cameron, Fisher and Miller;(312)616-3248;olivia29@guerrero.com;pass3330;1;4;3;5;CARRIER025_ADMIN
+99b06cf9-25df-41fb-9011-6cb38bb7ecee;CARRIER026;Watts Group;785-090-2556;nortonwilliam@goodwin-green.com;pass7594;5;7;8;9;CARRIER026_ADMIN
+1f884ed9-cefa-4f95-9227-557d9a8b8524;CARRIER027;Rodriguez-Anderson;+1-803-657-7449x160;peterlynch@anderson-brown.com;pass5557;5;5;8;8;CARRIER027_ADMIN
+6d0b4f01-cf09-4990-bb5f-b4278fd1bc4e;CARRIER028;Peterson-Dunn;(695)826-4186;ocooper@mclean.com;pass2442;5;8;5;7;CARRIER028_ADMIN
+18323765-d145-4528-b91b-ad400b022156;CARRIER029;Young-Palmer;+1-527-789-5613x37184;joseph02@morris.net;pass9167;1;10;3;6;CARRIER029_ADMIN
+9733b490-8eba-4d06-8a18-6676f473c022;CARRIER030;Pittman, White and Soto;216-505-8714x69218;charlesduncan@bradley-novak.org;pass2989;3;3;4;6;CARRIER030_ADMIN
