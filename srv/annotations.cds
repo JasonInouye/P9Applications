@@ -1,4 +1,4 @@
-using { Planet9ApplicationsService } from '../srv/service.cds';
+using { Planet9ApplicationsService } from './service.cds';
 
 annotate Planet9ApplicationsService.Carriers with @UI.HeaderInfo: {
   TypeName: 'Carrier',
@@ -53,7 +53,7 @@ annotate Planet9ApplicationsService.Carriers with @UI.LineItem: [
   { $Type: 'UI.DataField', Value: maxDrivers },
   { $Type: 'UI.DataField', Value: numUsers },
   { $Type: 'UI.DataField', Value: maxUsers },
-  { $Type: 'UI.DataField', Label: 'Admin User', Value: adminUser_ID }
+  { $Type: 'UI.DataField', Label: 'Admin User', Value: adminUser.userID }
 ];
 
 annotate Planet9ApplicationsService.Carriers with @UI.FieldGroup #Main: {
@@ -72,7 +72,7 @@ annotate Planet9ApplicationsService.Carriers with @UI.FieldGroup #Main: {
     { $Type: 'UI.DataField', Value: createdBy },
     { $Type: 'UI.DataField', Value: modifiedAt },
     { $Type: 'UI.DataField', Value: modifiedBy },
-    { $Type: 'UI.DataField', Label: 'Admin User', Value: adminUser_ID }
+    { $Type: 'UI.DataField', Label: 'Admin User', Value: adminUser.userID }
   ]
 };
 
