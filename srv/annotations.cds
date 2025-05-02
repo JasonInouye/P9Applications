@@ -68,10 +68,10 @@ annotate Planet9ApplicationsService.Carriers with @UI.FieldGroup #Main: {
     { $Type: 'UI.DataField', Value: maxDrivers },
     { $Type: 'UI.DataField', Value: numUsers },
     { $Type: 'UI.DataField', Value: maxUsers },
-    { $Type: 'UI.DataField', Value: createdAt },
-    { $Type: 'UI.DataField', Value: createdBy },
-    { $Type: 'UI.DataField', Value: modifiedAt },
-    { $Type: 'UI.DataField', Value: modifiedBy },
+    // { $Type: 'UI.DataField', Value: createdAt },
+    // { $Type: 'UI.DataField', Value: createdBy },
+    // { $Type: 'UI.DataField', Value: modifiedAt },
+    // { $Type: 'UI.DataField', Value: modifiedBy },
     { $Type: 'UI.DataField', Label: 'Admin User', Value: adminUser.userID }
   ]
 };
