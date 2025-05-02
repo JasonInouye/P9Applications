@@ -186,7 +186,7 @@
       ],
       "@UI.SelectionFields": [
         {
-          "=": "adminUser_ID"
+          "=": "adminUser.userID"
         }
       ],
       "@assert.unique.carrierID": [
