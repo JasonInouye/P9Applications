@@ -35,6 +35,16 @@
     "watch-planet9applications.archivedorders": "cds watch --open planet9applications.archivedorders/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
+    "folders": {
+      "models": [
+        "srv",
+        "db",
+        "app"
+      ]
+    },
+    "features": {
+      "csn": true
+    },
     "sql": {
       "native_hana_associations": false
     },
@@ -51,12 +61,6 @@
           "kind": "xsuaa"
         }
       }
-    },
-    "folders": {
-      "model": ["srv","db","app"]
-    },
-    "features": {
-      "csn": true
     }
   },
   "lcap": true,

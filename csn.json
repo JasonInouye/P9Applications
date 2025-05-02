@@ -1,5 +1,478 @@
 {
+  "namespace": "Planet9Applications",
   "definitions": {
+    "Planet9Applications.Carriers": {
+      "kind": "entity",
+      "@assert.unique.carrierID": [
+        {
+          "=": "carrierID"
+        }
+      ],
+      "includes": [
+        "cuid",
+        "managed"
+      ],
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "createdAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "createdBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "modifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "modifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@title": "{i18n>ChangedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "carrierID": {
+          "@mandatory": true,
+          "type": "cds.String",
+          "length": 50
+        },
+        "carrierName": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "phone": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "email": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "password": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "numDrivers": {
+          "type": "cds.Integer"
+        },
+        "maxDrivers": {
+          "type": "cds.Integer"
+        },
+        "numUsers": {
+          "type": "cds.Integer"
+        },
+        "maxUsers": {
+          "type": "cds.Integer"
+        },
+        "adminUser": {
+          "type": "cds.Association",
+          "target": "Planet9Applications.Users",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "users": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "Planet9Applications.Users",
+          "on": [
+            {
+              "ref": [
+                "users",
+                "carrierID"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "carrierID"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Planet9Applications.Users": {
+      "kind": "entity",
+      "@assert.unique.userID": [
+        {
+          "=": "userID"
+        }
+      ],
+      "includes": [
+        "cuid",
+        "managed"
+      ],
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "createdAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "createdBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "modifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "modifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@title": "{i18n>ChangedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "userID": {
+          "@mandatory": true,
+          "type": "cds.String",
+          "length": 50
+        },
+        "userName": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "email": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "phone": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "password": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "isDriver": {
+          "type": "cds.Boolean"
+        },
+        "isUser": {
+          "type": "cds.Boolean"
+        },
+        "carrierID": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "carrier": {
+          "type": "cds.Association",
+          "target": "Planet9Applications.Carriers",
+          "on": [
+            {
+              "ref": [
+                "carrier",
+                "carrierID"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "carrierID"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Planet9Applications.Locations": {
+      "kind": "entity",
+      "@assert.unique.terminalID": [
+        {
+          "=": "terminalID"
+        }
+      ],
+      "includes": [
+        "cuid",
+        "managed"
+      ],
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "createdAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "createdBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "modifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "modifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@title": "{i18n>ChangedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "terminalID": {
+          "@mandatory": true,
+          "type": "cds.String",
+          "length": 50
+        },
+        "tcn": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "name": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "houseNumber": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "streetAddress": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "city": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "state": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "postalCode": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "latitude": {
+          "type": "cds.Decimal",
+          "precision": 9,
+          "scale": 6
+        },
+        "longitude": {
+          "type": "cds.Decimal",
+          "precision": 9,
+          "scale": 6
+        },
+        "timeZone": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "tcnDisplay": {
+          "type": "cds.String",
+          "length": 50
+        }
+      }
+    },
+    "Planet9Applications.ArchivedOrders": {
+      "kind": "entity",
+      "@assert.unique.orderID": [
+        {
+          "=": "orderID"
+        }
+      ],
+      "includes": [
+        "cuid",
+        "managed"
+      ],
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "createdAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "createdBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "modifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "modifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@title": "{i18n>ChangedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "orderID": {
+          "@mandatory": true,
+          "type": "cds.String",
+          "length": 50
+        },
+        "siteID": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "terminalID": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "tcn": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "startDelivery": {
+          "type": "cds.DateTime"
+        },
+        "endDelivery": {
+          "type": "cds.DateTime"
+        },
+        "orderStatus": {
+          "type": "cds.String",
+          "length": 50
+        }
+      }
+    },
     "Planet9ApplicationsService": {
       "@source": "srv/service.cds",
       "kind": "service",
@@ -214,31 +687,30 @@
           "type": "cds.UUID"
         },
         "createdAt": {
-          "@title": "Created At",
           "@cds.on.insert": {
             "=": "$now"
           },
           "@UI.HiddenFilter": true,
           "@UI.ExcludeFromNavigationContext": true,
           "@Core.Immutable": true,
+          "@title": "{i18n>CreatedAt}",
           "@readonly": true,
           "type": "cds.Timestamp"
         },
         "createdBy": {
-          "@title": "Created By",
           "@cds.on.insert": {
             "=": "$user"
           },
           "@UI.HiddenFilter": true,
           "@UI.ExcludeFromNavigationContext": true,
           "@Core.Immutable": true,
+          "@title": "{i18n>CreatedBy}",
           "@readonly": true,
           "@description": "{i18n>UserID.Description}",
           "type": "User",
           "length": 255
         },
         "modifiedAt": {
-          "@title": "Modified At",
           "@cds.on.insert": {
             "=": "$now"
           },
@@ -247,11 +719,11 @@
           },
           "@UI.HiddenFilter": true,
           "@UI.ExcludeFromNavigationContext": true,
+          "@title": "{i18n>ChangedAt}",
           "@readonly": true,
           "type": "cds.Timestamp"
         },
         "modifiedBy": {
-          "@title": "Modified By",
           "@cds.on.insert": {
             "=": "$user"
           },
@@ -260,6 +732,7 @@
           },
           "@UI.HiddenFilter": true,
           "@UI.ExcludeFromNavigationContext": true,
+          "@title": "{i18n>ChangedBy}",
           "@readonly": true,
           "@description": "{i18n>UserID.Description}",
           "type": "User",
@@ -685,478 +1158,6 @@
           ]
         }
       },
-      "elements": {
-        "ID": {
-          "key": true,
-          "type": "cds.UUID"
-        },
-        "createdAt": {
-          "@cds.on.insert": {
-            "=": "$now"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@Core.Immutable": true,
-          "@title": "{i18n>CreatedAt}",
-          "@readonly": true,
-          "type": "cds.Timestamp"
-        },
-        "createdBy": {
-          "@cds.on.insert": {
-            "=": "$user"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@Core.Immutable": true,
-          "@title": "{i18n>CreatedBy}",
-          "@readonly": true,
-          "@description": "{i18n>UserID.Description}",
-          "type": "User",
-          "length": 255
-        },
-        "modifiedAt": {
-          "@cds.on.insert": {
-            "=": "$now"
-          },
-          "@cds.on.update": {
-            "=": "$now"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@title": "{i18n>ChangedAt}",
-          "@readonly": true,
-          "type": "cds.Timestamp"
-        },
-        "modifiedBy": {
-          "@cds.on.insert": {
-            "=": "$user"
-          },
-          "@cds.on.update": {
-            "=": "$user"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@title": "{i18n>ChangedBy}",
-          "@readonly": true,
-          "@description": "{i18n>UserID.Description}",
-          "type": "User",
-          "length": 255
-        },
-        "orderID": {
-          "@mandatory": true,
-          "type": "cds.String",
-          "length": 50
-        },
-        "siteID": {
-          "type": "cds.String",
-          "length": 50
-        },
-        "terminalID": {
-          "type": "cds.String",
-          "length": 50
-        },
-        "tcn": {
-          "type": "cds.String",
-          "length": 50
-        },
-        "startDelivery": {
-          "type": "cds.DateTime"
-        },
-        "endDelivery": {
-          "type": "cds.DateTime"
-        },
-        "orderStatus": {
-          "type": "cds.String",
-          "length": 50
-        }
-      }
-    },
-    "Planet9Applications.Carriers": {
-      "kind": "entity",
-      "@assert.unique.carrierID": [
-        {
-          "=": "carrierID"
-        }
-      ],
-      "includes": [
-        "cuid",
-        "managed"
-      ],
-      "elements": {
-        "ID": {
-          "key": true,
-          "type": "cds.UUID"
-        },
-        "createdAt": {
-          "@cds.on.insert": {
-            "=": "$now"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@Core.Immutable": true,
-          "@title": "{i18n>CreatedAt}",
-          "@readonly": true,
-          "type": "cds.Timestamp"
-        },
-        "createdBy": {
-          "@cds.on.insert": {
-            "=": "$user"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@Core.Immutable": true,
-          "@title": "{i18n>CreatedBy}",
-          "@readonly": true,
-          "@description": "{i18n>UserID.Description}",
-          "type": "User",
-          "length": 255
-        },
-        "modifiedAt": {
-          "@cds.on.insert": {
-            "=": "$now"
-          },
-          "@cds.on.update": {
-            "=": "$now"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@title": "{i18n>ChangedAt}",
-          "@readonly": true,
-          "type": "cds.Timestamp"
-        },
-        "modifiedBy": {
-          "@cds.on.insert": {
-            "=": "$user"
-          },
-          "@cds.on.update": {
-            "=": "$user"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@title": "{i18n>ChangedBy}",
-          "@readonly": true,
-          "@description": "{i18n>UserID.Description}",
-          "type": "User",
-          "length": 255
-        },
-        "carrierID": {
-          "@mandatory": true,
-          "type": "cds.String",
-          "length": 50
-        },
-        "carrierName": {
-          "type": "cds.String",
-          "length": 100
-        },
-        "phone": {
-          "type": "cds.String",
-          "length": 20
-        },
-        "email": {
-          "type": "cds.String",
-          "length": 100
-        },
-        "password": {
-          "type": "cds.String",
-          "length": 100
-        },
-        "numDrivers": {
-          "type": "cds.Integer"
-        },
-        "maxDrivers": {
-          "type": "cds.Integer"
-        },
-        "numUsers": {
-          "type": "cds.Integer"
-        },
-        "maxUsers": {
-          "type": "cds.Integer"
-        },
-        "adminUser": {
-          "type": "cds.Association",
-          "target": "Planet9Applications.Users",
-          "keys": [
-            {
-              "ref": [
-                "ID"
-              ]
-            }
-          ]
-        },
-        "users": {
-          "type": "cds.Association",
-          "cardinality": {
-            "max": "*"
-          },
-          "target": "Planet9Applications.Users",
-          "on": [
-            {
-              "ref": [
-                "users",
-                "carrierID"
-              ]
-            },
-            "=",
-            {
-              "ref": [
-                "carrierID"
-              ]
-            }
-          ]
-        }
-      }
-    },
-    "Planet9Applications.Users": {
-      "kind": "entity",
-      "@assert.unique.userID": [
-        {
-          "=": "userID"
-        }
-      ],
-      "includes": [
-        "cuid",
-        "managed"
-      ],
-      "elements": {
-        "ID": {
-          "key": true,
-          "type": "cds.UUID"
-        },
-        "createdAt": {
-          "@cds.on.insert": {
-            "=": "$now"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@Core.Immutable": true,
-          "@title": "{i18n>CreatedAt}",
-          "@readonly": true,
-          "type": "cds.Timestamp"
-        },
-        "createdBy": {
-          "@cds.on.insert": {
-            "=": "$user"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@Core.Immutable": true,
-          "@title": "{i18n>CreatedBy}",
-          "@readonly": true,
-          "@description": "{i18n>UserID.Description}",
-          "type": "User",
-          "length": 255
-        },
-        "modifiedAt": {
-          "@cds.on.insert": {
-            "=": "$now"
-          },
-          "@cds.on.update": {
-            "=": "$now"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@title": "{i18n>ChangedAt}",
-          "@readonly": true,
-          "type": "cds.Timestamp"
-        },
-        "modifiedBy": {
-          "@cds.on.insert": {
-            "=": "$user"
-          },
-          "@cds.on.update": {
-            "=": "$user"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@title": "{i18n>ChangedBy}",
-          "@readonly": true,
-          "@description": "{i18n>UserID.Description}",
-          "type": "User",
-          "length": 255
-        },
-        "userID": {
-          "@mandatory": true,
-          "type": "cds.String",
-          "length": 50
-        },
-        "userName": {
-          "type": "cds.String",
-          "length": 100
-        },
-        "email": {
-          "type": "cds.String",
-          "length": 100
-        },
-        "phone": {
-          "type": "cds.String",
-          "length": 20
-        },
-        "password": {
-          "type": "cds.String",
-          "length": 100
-        },
-        "isDriver": {
-          "type": "cds.Boolean"
-        },
-        "isUser": {
-          "type": "cds.Boolean"
-        },
-        "carrierID": {
-          "type": "cds.String",
-          "length": 50
-        },
-        "carrier": {
-          "type": "cds.Association",
-          "target": "Planet9Applications.Carriers",
-          "on": [
-            {
-              "ref": [
-                "carrier",
-                "carrierID"
-              ]
-            },
-            "=",
-            {
-              "ref": [
-                "carrierID"
-              ]
-            }
-          ]
-        }
-      }
-    },
-    "Planet9Applications.Locations": {
-      "kind": "entity",
-      "@assert.unique.terminalID": [
-        {
-          "=": "terminalID"
-        }
-      ],
-      "includes": [
-        "cuid",
-        "managed"
-      ],
-      "elements": {
-        "ID": {
-          "key": true,
-          "type": "cds.UUID"
-        },
-        "createdAt": {
-          "@cds.on.insert": {
-            "=": "$now"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@Core.Immutable": true,
-          "@title": "{i18n>CreatedAt}",
-          "@readonly": true,
-          "type": "cds.Timestamp"
-        },
-        "createdBy": {
-          "@cds.on.insert": {
-            "=": "$user"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@Core.Immutable": true,
-          "@title": "{i18n>CreatedBy}",
-          "@readonly": true,
-          "@description": "{i18n>UserID.Description}",
-          "type": "User",
-          "length": 255
-        },
-        "modifiedAt": {
-          "@cds.on.insert": {
-            "=": "$now"
-          },
-          "@cds.on.update": {
-            "=": "$now"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@title": "{i18n>ChangedAt}",
-          "@readonly": true,
-          "type": "cds.Timestamp"
-        },
-        "modifiedBy": {
-          "@cds.on.insert": {
-            "=": "$user"
-          },
-          "@cds.on.update": {
-            "=": "$user"
-          },
-          "@UI.HiddenFilter": true,
-          "@UI.ExcludeFromNavigationContext": true,
-          "@title": "{i18n>ChangedBy}",
-          "@readonly": true,
-          "@description": "{i18n>UserID.Description}",
-          "type": "User",
-          "length": 255
-        },
-        "terminalID": {
-          "@mandatory": true,
-          "type": "cds.String",
-          "length": 50
-        },
-        "tcn": {
-          "type": "cds.String",
-          "length": 50
-        },
-        "name": {
-          "type": "cds.String",
-          "length": 100
-        },
-        "houseNumber": {
-          "type": "cds.String",
-          "length": 10
-        },
-        "streetAddress": {
-          "type": "cds.String",
-          "length": 100
-        },
-        "city": {
-          "type": "cds.String",
-          "length": 50
-        },
-        "state": {
-          "type": "cds.String",
-          "length": 50
-        },
-        "postalCode": {
-          "type": "cds.String",
-          "length": 20
-        },
-        "latitude": {
-          "type": "cds.Decimal",
-          "precision": 9,
-          "scale": 6
-        },
-        "longitude": {
-          "type": "cds.Decimal",
-          "precision": 9,
-          "scale": 6
-        },
-        "timeZone": {
-          "type": "cds.String",
-          "length": 50
-        },
-        "tcnDisplay": {
-          "type": "cds.String",
-          "length": 50
-        }
-      }
-    },
-    "Planet9Applications.ArchivedOrders": {
-      "kind": "entity",
-      "@assert.unique.orderID": [
-        {
-          "=": "orderID"
-        }
-      ],
-      "includes": [
-        "cuid",
-        "managed"
-      ],
       "elements": {
         "ID": {
           "key": true,

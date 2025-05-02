@@ -1,4 +1,4 @@
-using { Planet9ApplicationsService } from './service.cds';
+using { Planet9ApplicationsService } from './service';
 
 annotate Planet9ApplicationsService.Carriers with @UI.HeaderInfo: {
   TypeName: 'Carrier',
@@ -20,10 +20,10 @@ annotate Planet9ApplicationsService.Carriers with {
   maxDrivers @title: 'Maximum Allowed Drivers';
   numUsers @title: 'Current Number of Users';
   maxUsers @title: 'Maximum Allowed Users';
-  createdAt @title: 'Created At';
-  createdBy @title: 'Created By';
-  modifiedAt @title: 'Modified At';
-  modifiedBy @title: 'Modified By';
+  // createdAt @title: 'Created At';
+  // createdBy @title: 'Created By';
+  // modifiedAt @title: 'Modified At';
+  // modifiedBy @title: 'Modified By';
   adminUser @Common.Text: { $value: adminUser.userID, ![@UI.TextArrangement]: #TextOnly };
   adminUser @Common.Label: 'Admin User';
   users @Common.Label: 'Users';

@@ -1,4 +1,5 @@
 namespace Planet9Applications;
+
 using { cuid, managed } from '@sap/cds/common';
 
 @assert.unique: { carrierID: [carrierID] }
