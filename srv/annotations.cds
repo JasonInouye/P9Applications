@@ -92,7 +92,7 @@ annotate Planet9ApplicationsService.Carriers with @UI.Facets: [
 ];
 
 annotate Planet9ApplicationsService.Carriers with @UI.SelectionFields: [
-  adminUser_ID
+  adminUser.userID
 ];
 
 annotate Planet9ApplicationsService.Users with @UI.HeaderInfo: {
