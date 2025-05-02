@@ -50,10 +50,13 @@
         "[production]": {
           "kind": "xsuaa"
         }
-      },
-      "folders": {
-        "model": ["srv","db","app"]
       }
+    },
+    "folders": {
+      "model": ["srv","db","app"]
+    },
+    "features": {
+      "csn": true
     }
   },
   "lcap": true,
